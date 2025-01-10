@@ -32,6 +32,8 @@ TTL number là khoảng thời gian tồn tại của 1 DNS Record được tín
 10. Trình duyệt sẽ sử dụng địa chỉ IP nhận được để kết nối với server và tải trang web yêu cầu.
 ### DNS Zone là gì?
 DNS Zone là một phần của không gian tên miền mà các cơ quan quản lý hoặc các máy chủ DNS cụ thể có thẩm quyền kiểm soát và quản lý. Một DNS Zone có thể chứa một hoặc nhiều tên miền và các record, bao gồm cả bản ghi các tài nguyên (Resource Records) như địa chỉ IP, bản ghi MX (mail exchange), bản ghi CNAME (canonical name) và nhiều loại bản ghi khác.
+### Nameserver
+Là máy chủ có vai trò tiếp nhận các yêu cầu về tên miền và phản hồi bằng địa chỉ thích hợp. Vd: ns1.vietnix.net; ns2.vietnix.net;... 
 #### Record
 CPanel có 4 loại record chính:  A, MX, NS, CNAME. 
 ##### A Record
@@ -40,3 +42,22 @@ Là một loại bản ghi trong hệ thống DNS được sử dụng để án
 cpanel.com. IN A 208.74.123.68
 ftp         IN A 208.74.123.58
 ```
+Lưu ý: Dấu "." ở cuối "cpanel.com." không phải là lỗi đánh máy. Đối với ftp nó có nghĩa là bản ghi ftp IN A 208.74.123.58 sẽ tương đương với bản ghi fpt.cpanel.com IN A  208.74.123.58. 
+##### CNAME Record
+Là một loại bản ghi trong hệ thống DNS được sử dụng để ánh xạ domain này tới một domain khác. Như khi ai đó truy cập vào "www.cpanel.com", hệ thống DNS sẽ chuyển hướng tới "cpanel.com", và sau đó lấy địa chỉ IP từ A Record của "cpanel.com" để kết nối tới server.
+```
+www IN CNAME cpanel.com
+```
+Lưu ý: Bản ghi www vẫn có khả năng trỏ đến một địa chỉ IP khác với tên miền gốc, dẫn bạn đến một máy chủ và/hoặc trang web hoàn toàn khác, tuy nhiên thực tế đã ít sử dụng. 
+##### MX Record
+Là một loại bản ghi DNS được sử dụng để xác định email server nào chịu trách nhiệm nhận email cho một domain cụ thể.
+```
+cpanel.com. IN MX 0 mx1.cpanel.com
+mx1.cpanel.com. IN A 208.74.121.68
+```
+Lưu ý:  Số 0 trong record được gọi là mức độ ưu tiên (prority) của MX record đó. Điều này có nghĩa là có thể có nhiều bản ghi MX cho một tên miền -> tạo ra một hệ thống dự phòng dựa trên DNS cho các mail server. 
+##### NS Record
+Là một loại bản ghi DNS được sử dụng để xác định máy chủ tên nào chịu trách nhiệm cho một vùng DNS cụ thể. NS Record chỉ ra các nameserver có thẩm quyền và giúp định hướng các truy vấn DNS tới đúng nameserver để trả lời. Cấu trúc của một NS Record bao gồm hai thành phần chính: Tên miền hoặc tên phụ mà bản ghi NS này áp dụng (ví dụ: "example.com"), tên máy chủ tên có thẩm quyền cho tên miền đó (ví dụ: "ns1.example.com"). 
+## Web
+### Domain
+Một domain bao gồm 3 phần chính: Subdomain, Domain Name (tên miền), và Top-Level Domain (miền cấp cao).
