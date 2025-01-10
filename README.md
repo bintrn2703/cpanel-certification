@@ -30,3 +30,11 @@ TTL number là khoảng thời gian tồn tại của 1 DNS Record được tín
 8. DNS Resolver sẽ tiếp tục liên hệ với TLD Server, server này sẽ trả về địa chỉ của Authoritative DNS Server cho tên miền cụ thể.
 9. Authoritative DNS Server sẽ cung cấp địa chỉ IP chính xác cho tên miền đó. DNS Resolver sau đó sẽ lưu trữ thông tin này trong bộ nhớ cache của nó và gửi lại cho trình duyệt.
 10. Trình duyệt sẽ sử dụng địa chỉ IP nhận được để kết nối với server và tải trang web yêu cầu.
+### DNS Zone là gì?
+DNS Zone là một phần của không gian tên miền mà các cơ quan quản lý hoặc các máy chủ DNS cụ thể có thẩm quyền kiểm soát và quản lý. Một DNS Zone có thể chứa một hoặc nhiều tên miền và các record, bao gồm cả bản ghi các tài nguyên (Resource Records) như địa chỉ IP, bản ghi MX (mail exchange), bản ghi CNAME (canonical name) và nhiều loại bản ghi khác.
+#### Record
+CPanel có 4 loại record chính:  A, MX, NS, CNAME. 
+##### A Record
+Là một loại bản ghi trong hệ thống DNS được sử dụng để ánh xạ tên miền tới một địa chỉ IP cụ thể.
+> cpanel.com. IN A 208.74.123.68
+> ftp         IN A 208.74.123.58
