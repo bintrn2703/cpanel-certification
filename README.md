@@ -36,7 +36,7 @@ DNS Zone là một phần của không gian tên miền mà các cơ quan quản
 CPanel có 4 loại record chính:  A, MX, NS, CNAME. 
 ##### A Record
 Là một loại bản ghi trong hệ thống DNS được sử dụng để ánh xạ tên miền tới một địa chỉ IP cụ thể.
-'''
+```
 cpanel.com. IN A 208.74.123.68
 ftp         IN A 208.74.123.58
-'''
+```
