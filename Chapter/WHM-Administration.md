@@ -17,8 +17,6 @@ POP3 là một giao thức chuẩn dùng để truy cập và tải email từ m
 Dovecot là mail server IMAP/POP3 được sử dụng trong cPanel & WHM. MUA bao gồm Microsoft Outlook, Mozilla Thunderbird, và Apple Mail.
 ### Primary Storage Option 
 Có 2 tùy chọn lưu trữ chính của thư trong *NIX: mdbox và Maildir:
-* **Mdbox** lưu trữ nhiều tin nhắn trong một tệp duy nhất.
-* **Maildir** lưu trữ mỗi thư một tệp riêng biệt.
 ### Authentication Daemons
 * Authenticaion Daemons là những chương trình đăng nhập người dùng và thực hiện công việc để đảm bảo sử dụng đúng mật khẩu.
 * Trên Panel, có thể điều chỉnh Authentication Daemons trong giao diện *WHM » Service Configuration » Mailserver Configuration.* 
@@ -42,5 +40,47 @@ $ ps -C exim wwwu: xem những tiến trình exim đang chạy.
 $ lsof -c exim: Lệnh này hiển thị danh sách các file đang được Exim truy cập.
 
 $ openssl s_client -connect IP:port : test IMAP với OpenSSL
+
+$ Zcat: view zipped files without unzipping them. 
+
+$ Exigrep: read Exim logs. 
+
+$ exim -bpc để xem số mail trong queue. 
+
+$ exim-bp: xem toàn bộ hàng đợi thư với nhiều chi tiết hơn. 
+
+$ cwd: xem đường dẫn kích hoạt việc gửi tin nhắn. 
+
+$ exiqgrep -f [user]@domain.tld : xem message theo người gửi.
+
+$ exiqgrep -r [user]@domain.tld : xem message theo người nhận.
+
+$ exiqgrep -o 172800 (older); exiqgrep -y 1800 (younger) : xem message theo thời gian (older/younger).
+
+$ exim -Mvh <exim-id> : xem msg theo header. 
+
+$ exim -Mvb <exim-id> : xem msg theo body.
+
+$ exiqgrep -r user@domain.tld -i | xargs exim -M : Resending a Message.
+
+$ exim -Mrm <exim-id>: Deleting a Message.
+
+$ exim -bt <email address> : check routing info.
+### Mail Storage Formats
+#### Maildir
+* MailDir lưu trữ từng email trong file riêng. 
+* Mỗi thư mục trong client có một thư mục tương ứng trên server. 
+* Các thư mục có 2 chuẩn new (no-read) và cur (read). 
+* Các thư mục được gán tên theo chức năng như: .sent (thư Đã gửi), .Draft (thư Nháp), .Trash (đã xóa). 
+* Bên trong domain directory, mỗi acc email sẽ có 1 folder. Ví dụ: trong ảnh trên, các địa chỉ email kia@cars.test và vw@cars.test tồn tại, vì vậy chúng ta thấy các thư mục Kia và vw.
+* Message của mỗi domain được lưu trong một folder được đặt theo tên domain, vd: cars.test/
+* Thư mục subcription được webmail sử dụng và được kiểm soát bởi webmail client.
+* Các file dovecot.* được dovecot sử dụng để theo dõi thư.
+* File maildirsize được dovecot sử dụng để theo dõi kích thước hộp thư.
+#### Mdbox
+* mdbox lưu trữ nhiều mail trong một file.
+* Các file dovecot, maildirsize và subscription của mdbox giống maildir.
+* Từng folder trong mailboxes là user mailbox.
+* Thư được lưu trữ trong tệp có tên “m.1”. 
 ## Log file chứa ở đâu?
 ![logfile path](https://exams.cpanel.net/getfile/TK_w0BHMRvieYBThQhuts-lAA.M012Yk14RmlyaENIaG55VVQxWGdXNUc1MFFETHNHMHF2eEZBd1pxdit0TjBQMzc4S3d4RVBRSTVoOXNHdllhdg/cpanel/1670441040_introduction-mail-server-overview-cmi5-_rcfho4w/scormcontent/assets/3nm7-PNLjbW04bII_3T1uw8p0pDtilh5d.png)
