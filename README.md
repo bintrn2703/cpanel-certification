@@ -61,3 +61,66 @@ Là một loại bản ghi DNS được sử dụng để xác định máy ch�
 ## Web
 ### Domain
 Một domain bao gồm 3 phần chính: Subdomain, Domain Name (tên miền), và Top-Level Domain (miền cấp cao).
+![Screenshot 2025-01-10 at 10-56-17 Domain - Domain pdf](https://github.com/user-attachments/assets/a2e6f005-0c19-4b5b-8071-d73b60401b06)
+
+Trong đó:
+* Protocol: Protocol là một tập hợp các quy tắc chuẩn cho phép hai hoặc nhiều thực thể trong cùng một hệ thống để trao đổi thông tin liên lạc, dữ liệu qua các kênh truyền thông.
+* Subdomain: Subdomain là một phần tùy chọn và nằm phía trước tên miền chính. Nó giúp chia nhỏ và tổ chức trang web hoặc ứng dụng của bạn thành các phần khác nhau.
+* Domain Name (Tên miền): Đây là phần chính của tên miền và thường là từ hoặc cụm từ mô tả nội dung hoặc thương hiệu của trang web.
+* Second Level Domain: Một thành phần quan trọng của tên miền giúp phân biệt tên miền của bạn với các tên miền khác, giúp người dùng hiểu rõ hơn về nội dung hoặc lĩnh vực hoạt động của trang web.
+* Top-Level Domain (TLD - Miền cấp cao): Miền cấp cao là phần cuối cùng của tên miền và thường là các phần mở rộng như .com, .net, .org, .edu, .vn và nhiều loại khác. Miền cấp cao giúp xác định loại hình trang web hoặc địa chỉ trực tuyến mà tên miền đề cập đến.
+* Page - Path: Đường dẫn trang cho biết cách di chuyển trong cấu trúc trang web. Mỗi phần của đường dẫn trang thường thể hiện một thư mục hoặc một trang cụ thể trên trang web.
+#### Phân biệt addon domain, subdomain, alias domain, parked domain
+| Loại Domain      | Định nghĩa                                          | Ví dụ                              | Mục đích sử dụng                      |
+|------------------|-----------------------------------------------------|------------------------------------|---------------------------------------|
+| **Subdomain**    | Một phần mở rộng của tên miền chính                 | `blog.yourdomain.com`              | Phân chia các phần khác nhau của website chính  |
+| **Addon Domain** | Tên miền mới thêm vào tài khoản hosting            | `newdomain.com`                    | Quản lý nhiều website trên một tài khoản hosting |
+| **Alias Domain** | Tên miền thay thế cho tên miền chính               | `yourdomain.net` trỏ về `yourdomain.com` | Sử dụng nhiều tên miền để trỏ về cùng một trang web |
+| **Parked Domain**| Tên miền được đăng ký nhưng không có nội dung      | `parkeddomain.com`                 | Giữ chỗ cho tên miền trong tương lai hoặc hiển thị quảng cáo |
+#### Các cấp domain
+* Cấp 1: .com,.org, .net, …
+* Cấp 2: tên miền quốc gia: .vn, .us, .cn, …
+* Cấp 3: là sự kết hợp giữa tên miền cấp 1 và cấp 2: .com.vn, .edu.vn, ...
+### Protocol
+#### IP (Internet protocol) 
+* Là giao thức để các máy tính tìm thấy nhau trên mạng.
+* IP Address là số được gán cho máy tính để máy tính khác có thể tìm thấy nó. Có 2 loại là IPv4 và IPv6.
+* Để các IP ko bị trùng thì IANA đã được sinh ra để quản lí chúng.
+#### HTTP (Hypertext Transfer Protocol) 
+Là một giao thức truyền tải siêu văn bản được sử dụng để truyền tải trên World Wide Web. HTTP là nền tảng của việc trao đổi thông tin giữa các trình duyệt web và web server. 
+#### HTTPS (Hypertext Transfer Protocol Secure) 
+Là phiên bản bảo mật của HTTP. HTTPS sử dụng SSL/TLS để bảo vệ dữ liệu truyền tải giữa trình duyệt web và web server. 
+#### SSL
+Là một giao thức cho phép thiết lập kết nối được mã hóa an toàn giữa máy chủ và trình duyệt web của máy khách.
+##### SSL gồm những gì?
+Khi khởi tạo SSL, cần tạo CSR và private key. Sau khi CA chứng nhận xác thực, sẽ nhận được SSL certificate và certificate chain. Bộ SSL hoàn chỉnh sẽ bao gồm SSL certificate, public key, private key và certificate chain. 
+## File System
+### Permission
+![markdown](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLjKiogu44Ovo3J1USgpx0-XpM4-5oHtbgWg&s)
+### File System
+![markdown](https://cdn.hashnode.com/res/hashnode/image/upload/v1609555594482/fJlVaulJb.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp)
+## Email
+### Email Travel 
+Có 6 bước email được gửi và nhận:  Soạn và gửi email trên ứng dụng -> Máy chủ SMTP gửi email  -> Máy chủ DNS tra cứu  -> Truyền tải qua Internet  ->Máy chủ SMTP nhận email  -> Người nhận nhận email thông qua imap/pop3. 
+### Email header
+Thông tin văn bản chứa dữ liệu bổ sung về email và người gửi được thêm vào mỗi email được gửi. 
+### Email encryption
+Được sử dụng để đảm bảo rằng chỉ những người được ủy quyền (authorize) mới có thể đọc dữ liệu của nó. 
+### HELO
+Lệnh văn bản được đưa ra giữa các máy chủ thư khi email được gửi là HELO. 
+### Giao thức trong email
+* SMTP: Gửi email đi. 
+* IMAP: nhận mail bằng cách truy cập và quản lý email trực tiếp trên máy chủ, đồng bộ hóa giữa các thiết bị. 
+* POP3: nhận mail bằng cách tải về email từ máy chủ về thiết bị cá nhân. 
+## Database
+Là thuật ngữ được định nghĩa là một tập hợp dữ liệu có cấu trúc. 
+### Table
+Core structure of a relational database. 
+### Engine
+*Là term được sử dụng để xác định thành phần xử lý logic trên bảng. 
+*Có 2 engines cho MySQL/MariaDB thường được sử dụng trên máy chủ cPanel & WHM là InnoDB(default) và MyISAM. 
+### Index
+Thuật ngữ được sử dụng để xác định cấu trúc dữ liệu cho phép việc tra cứu được thực hiện nhanh chóng (quick lookup) ngay cả trên cơ sở dữ liệu lớn. 
+### Grant
+MySQL gồm các quyền được cấp cho database, host, user. 
+
