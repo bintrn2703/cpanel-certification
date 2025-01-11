@@ -69,7 +69,7 @@ Thống kê disk của từng email.
 * Bộ lọc địa chỉ không cục bộ: Chỉ cho phép nhận các email mà người nhận có tồn tại trên hosting (email account có tạo). Khi bật tính năng này thì tính năng catch all email của cpanel sẽ không sử dụng được.
 * Bảo vệ virus: Quét email và filter các email có virus.
 
-Ngoài ra các tính năng này đều có log, mọi người nên trace log trước khi điều chỉnh một tính năng gì đó.
+Ngoài ra các tính năng này đều có log, nên trace log trước khi điều chỉnh một tính năng.
 
 ### File
 
@@ -117,6 +117,18 @@ Hỗ trợ tạo Database step-by-step. Giúp người tạo không bị quên c
 #### Remote MySQL
 Bật remote MySQL đối với database.
 
+### Metric
+* Visitors: Access-logs. Có thể dùng để xác định hosting đang bị đánh.
+* Errors: Apache Error Logs.
+* Bandwidth: Thống kê traffic từng ngày theo từng domain.
+* Raw Access: Cho phép download access log dạng file text.
+* Resource Usage:
+  - SPEED: CPU Hosting
+  - PMEM: Ram Hosting
+  - IO: I/O Hosting
+  - EP: Số lượng connect tối đa
+  - NPROC: Số lượng Process tối đa
+  - IOPS: I/O per second Hosting
 ### Domain
 #### WP Toolkit
 - Cài wordpress
@@ -142,7 +154,7 @@ ns2.host212.vietnix.vn
 #### Dynamic DNS
 Sau khi tạo cPanel sẽ cấp cho mình 1 Url. Khi muốn cập nhật NS cho subdomain này thì chỉ cần curl đến URL này.
 
-#### Quản lý IP (chỉ có trên Hosting SEO)
+#### IP Management (chỉ có trên Hosting SEO)
 Dùng để đổi IP cho các domain.
 
 ### Security
@@ -160,42 +172,41 @@ Quản lý SSL Server
 - Chứng chỉ (CRT): Thêm, xóa, sửa SSL của Domain
 - Cài đặt và Quản lý SSL cho trang web của bạn (HTTPS): Quản lý SSL của Domain
 
-#### Imunify360
-Quét virus, quá trình quét virus là tự động
+#### SSL/TLS Status
+Cài đặt AutoSSL.
+
+#### Hotlink & Leech Protection
+* Hotlink Protection: Giúp chặn các website khác chèn các directlink hình ảnh, file
+download của mình trên website của họ.
+* Leech Protection: Tính này liên quan đến phần Directory Privacy ở trên. Ví dụ sau khi
+tạo user/pass được phép truy cập vào 1 folder nào đó trên hosting. Mà user đó bị lộ
+pass và bị truy cập nhiều lần vào folder đó thì sẽ bị chặn và redirect đến 1 link khác
+hoặc thông báo cho admin.
 
 ### Software
 
-#### MultiPHP Manager
-Có thể tùy chọn các phiên bản PHP khác nhau cho từng website.
+* Imunify360: Quét virus, quá trình quét virus là tự động
 
-#### MultiPHP INI Editor
-Bật tắt các biến môi trường php ở đây.
+* MultiPHP Manager: Có thể tùy chọn các phiên bản PHP khác nhau cho từng website.
 
-#### Softaculous App Installer
-Cài đặt app bằng 1 click. Ví dụ: Wordpress, Laravel, Moodle, NextCloud,...
+* MultiPHP INI Editor: Bật tắt các biến môi trường php ở đây.
 
-#### Setup Node.js App
-Cài đặt nodeJS App
+* Softaculous App Installer: Cài đặt app bằng 1 click. Ví dụ: Wordpress, Laravel, Moodle, NextCloud,...
 
-### Nâng cao
+* Setup Node.js App: Cài đặt nodeJS App
 
-#### LiteSpeed Web Cache Manager
-Nếu khách có dùng LSCache plugin thì mình có thể hỗ trợ khách flush cache từ giao diện cPanel.
+### Advanced
 
-#### Terminal
-Được dùng để chạy các lệnh terminal.
+* LiteSpeed Web Cache Manager: Nếu khách có dùng LSCache plugin thì mình có thể hỗ trợ khách flush cache từ giao diện cPanel.
 
-#### Cron jobs
-Các nhiệm vụ lặp đi lặp lại được tự động hóa vào thời gian đã lên lịch. Ví dụ: tạo hóa đơn vào 12:00 hàng ngày.
+* Terminal: Được dùng để chạy các lệnh terminal.
 
-#### Track DNS
-Truy tìm tuyến đường từ PC đến máy chủ nhằm kiểm tra cài đặt DNS.
+* Cron jobs: Các nhiệm vụ lặp đi lặp lại được tự động hóa vào thời gian đã lên lịch. Ví dụ: tạo hóa đơn vào 12:00 hàng ngày.
 
-#### Error Page
-Giúp định cấu hình cách của các trang lỗi xuất hiện cho khách khi truy cập.
+* Track DNS: Truy tìm tuyến đường từ PC đến máy chủ nhằm kiểm tra cài đặt DNS.
 
-#### Apache Handle
-Đây là các lựa chọn xử lý của Apache.
+* Error Page: Giúp định cấu hình cách của các trang lỗi xuất hiện cho khách khi truy cập.
 
-#### MIME Types
-Dùng để hướng dẫn để xử lý với các phần mở rộng tệp khác nhau, chẳng hạn như: .html, .htm.
+* Apache Handle: là các lựa chọn xử lý của Apache.
+
+* MIME Types: Dùng để hướng dẫn để xử lý với các phần mở rộng tệp khác nhau, chẳng hạn như: .html, .htm.
