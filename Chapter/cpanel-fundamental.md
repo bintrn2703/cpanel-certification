@@ -117,8 +117,8 @@ Là thuật ngữ được định nghĩa là một tập hợp dữ liệu có 
 ### Table
 Core structure of a relational database. 
 ### Engine
-*Là term được sử dụng để xác định thành phần xử lý logic trên bảng. 
-*Có 2 engines cho MySQL/MariaDB thường được sử dụng trên máy chủ cPanel & WHM là InnoDB(default) và MyISAM. 
+* Là term được sử dụng để xác định thành phần xử lý logic trên bảng. 
+* Có 2 engines cho MySQL/MariaDB thường được sử dụng trên máy chủ cPanel & WHM là InnoDB(default) và MyISAM. 
 ### Index
 Thuật ngữ được sử dụng để xác định cấu trúc dữ liệu cho phép việc tra cứu được thực hiện nhanh chóng (quick lookup) ngay cả trên cơ sở dữ liệu lớn. 
 ### Grant
