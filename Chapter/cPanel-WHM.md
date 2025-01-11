@@ -131,18 +131,18 @@ Bật remote MySQL đối với database.
   - IOPS: I/O per second Hosting
 ### Domain
 #### WP Toolkit
-- Cài wordpress
-- Cài themes
-- Cài plugin
+- Cài wordpress.
+- Cài themes.
+- Cài plugin.
 
 #### Site Publisher
-Tạo nhanh 1 website bằng template có sẵn của cPanel
+Tạo nhanh 1 website bằng template có sẵn của cPanel.
 
 #### Domain
-Thêm, xóa domain
+Thêm, xóa domain.
 
 #### Redirector
-Redirect domain
+Redirect domain.
 
 #### Zone Editor
 Sau khi trỏ NS về Hosting thì có thể điều chỉnh các record ở đây. NS của hosting có dạng, ví dụ host212.vietnix.vn:
@@ -160,17 +160,17 @@ Dùng để đổi IP cho các domain.
 ### Security
 
 #### SSH Access
-SSH lên hosting, có thể cho phép add ssh key
+SSH lên hosting, có thể cho phép add ssh key.
 
 #### IP Blocker
-Block ip không cho truy cập vào website của bạn
+Block ip không cho truy cập vào website của bạn.
 
 #### SSL/TLS
 Quản lý SSL Server
-- Khóa riêng tư (KEY): Tạo Private key
-- Yêu cầu ký chứng chỉ (CSR): Tạo CSR
-- Chứng chỉ (CRT): Thêm, xóa, sửa SSL của Domain
-- Cài đặt và Quản lý SSL cho trang web của bạn (HTTPS): Quản lý SSL của Domain
+- Khóa riêng tư (KEY): Tạo Private key.
+- Yêu cầu ký chứng chỉ (CSR): Tạo CSR.
+- Chứng chỉ (CRT): Thêm, xóa, sửa SSL của Domain.
+- Cài đặt và Quản lý SSL cho trang web của bạn (HTTPS): Quản lý SSL của Domain.
 
 #### SSL/TLS Status
 Cài đặt AutoSSL.
@@ -185,7 +185,7 @@ hoặc thông báo cho admin.
 
 ### Software
 
-* Imunify360: Quét virus, quá trình quét virus là tự động
+* Imunify360: Quét virus, quá trình quét virus là tự động.
 
 * MultiPHP Manager: Có thể tùy chọn các phiên bản PHP khác nhau cho từng website.
 
@@ -193,7 +193,7 @@ hoặc thông báo cho admin.
 
 * Softaculous App Installer: Cài đặt app bằng 1 click. Ví dụ: Wordpress, Laravel, Moodle, NextCloud,...
 
-* Setup Node.js App: Cài đặt nodeJS App
+* Setup Node.js App: Cài đặt nodeJS App.
 
 ### Advanced
 
@@ -210,3 +210,71 @@ hoặc thông báo cho admin.
 * Apache Handle: là các lựa chọn xử lý của Apache.
 
 * MIME Types: Dùng để hướng dẫn để xử lý với các phần mở rộng tệp khác nhau, chẳng hạn như: .html, .htm.
+
+# WHM
+
+## Đổi Primary Domain
+
+1. Modify an Account → Tìm kiếm User → Modify
+2. Tại giao diện Modify → đổi Primary Domain → bấm Save
+
+Có 2 trường hợp xảy ra:
+- Save thành công
+- WHM báo đã có domain này tồn tại trên hệ thống → Check domain này khách hàng có add trước đó là add-on domain hay không, nếu đã add thì báo khách chủ động remove ra.
+
+## Migrate và Transfer
+
+1. Từ server cần migrate đến, vào Transfer Tool → Điền IP của server cũ vào ô Remote Server Address.
+2. Chọn Authentication Method là SSH Public Key và chọn key "transfer"
+3. Scan Remote Server và tìm user cần transfer, thực hiện copy.
+
+Sau khi transfer hosting ở bên cũ sẽ tự suspend.
+
+## Terminal
+
+### Reload Hosting
+```bash
+cagefs -m <user>
+```
+
+### Check domlogs
+File log của domain nằm tại:
+```bash
+Domain không có SSL: /var/log/apache2/domlogs/<domain>
+Domain có SSL: /var/log/apache2/domlogs/<domain>-ssl_log
+```
+
+### Check process đang chạy của một user
+```bash
+ps aux | grep <user>
+```
+
+## Kiểm tra hosting đang kết nối mail relay server bằng port nào?
+
+Ctrl + F để tìm từ khóa POSTMAILCOUNT
+
+## Tìm một add-on domain đang thuộc user nào?
+### Dùng terminal
+```bash
+cat /etc/userdatadomains | grep "conheo.com"
+abc.conheo.com:
+```
+
+### Dùng giao diện
+```
+khanhtest==root==sub==khanhtest.com==/home/khanhtest/abc.conheo.com==103.200.23.68:80==103.200.23.68:443====0==
+conheo.com.khanhtest.com:
+khanhtest==root==sub==khanhtest.com==/home/khanhtest/conheo.com==103.200.23.68:80==103.200.23.68:443====0==
+conheo.com:
+khanhtest==root==addon==conheo.com.khanhtest.com==/home/khanhtest/conheo.com==103.200.23.68:80==103.200.23.68:443====0==
+```
+
+## PHP X-Ray
+
+PHP x-ray dùng để trace cụ thể thời gian thực thi các function php, giúp phát hiện các func nào gây chậm website khách hàng.
+
+1. Vào plugin Cloudlinux Manager → X-ray → Start Tracing
+2. URL: điền URL cần tracing, url này là trang chủ hoặc url khách báo vào bị chậm
+3. Client's IP: Điền IP máy của tech vào, hoặc để * thì mọi ip request đến url này đều được trace
+4. Record for: Có thể chọn Time Period để trace trong 1 khoảng thời gian hoặc Request để trace dựa theo số lần request.
+5. Sau khi thiết lập các thông số xong, tech tiến hành request vào đường link trên 1 vài lần để x-ray phân tích
