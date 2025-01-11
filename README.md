@@ -1,7 +1,7 @@
 # Table of Content
 1. [Fundamental](https://github.com/bintrn2703/cpanel-certification/blob/main/Chapter/cpanel-fundamental.md)
-2. [How to use cPanel & WHM] (https://github.com/bintrn2703/cpanel-certification/blob/main/Chapter/cPanel-WHM.md)
-3. [Email Administration] (https://github.com/bintrn2703/cpanel-certification/blob/main/Chapter/WHM-Administration.md)
+2. [How to use cPanel & WHM](https://github.com/bintrn2703/cpanel-certification/blob/main/Chapter/cPanel-WHM.md)
+3. [Email Administration](https://github.com/bintrn2703/cpanel-certification/blob/main/Chapter/WHM-Administration.md)
 # cPanel Professional Certification Exam (CPP)
 ![Screenshot 2025-01-10 at 12-02-25 Certification for cPanel Professional Certification Exam (CPP) - certification-cPanel-Professional-Certification-Exam-CPP-phattrn](https://github.com/user-attachments/assets/336b441a-cbcb-4dc9-81df-b18e999fd3a8)
 # WHM Administration Certification Exam (CWA)
