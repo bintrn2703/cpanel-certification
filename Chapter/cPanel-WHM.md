@@ -254,20 +254,17 @@ ps aux | grep <user>
 Ctrl + F để tìm từ khóa POSTMAILCOUNT
 
 ## Tìm một add-on domain đang thuộc user nào?
-### Dùng terminal
+* Dùng terminal:
 ```bash
 cat /etc/userdatadomains | grep "conheo.com"
 abc.conheo.com:
-```
-
-### Dùng giao diện
-```
 khanhtest==root==sub==khanhtest.com==/home/khanhtest/abc.conheo.com==103.200.23.68:80==103.200.23.68:443====0==
 conheo.com.khanhtest.com:
 khanhtest==root==sub==khanhtest.com==/home/khanhtest/conheo.com==103.200.23.68:80==103.200.23.68:443====0==
 conheo.com:
 khanhtest==root==addon==conheo.com.khanhtest.com==/home/khanhtest/conheo.com==103.200.23.68:80==103.200.23.68:443====0==
 ```
+* Dùng giao diện cũng được.
 
 ## PHP X-Ray
 
