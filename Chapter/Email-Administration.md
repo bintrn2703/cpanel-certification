@@ -12,7 +12,23 @@ là giao thức nhận mail được dùng để kéo emails về emails client,
 ### POP3 (receive)
 POP3 là một giao thức chuẩn dùng để truy cập và tải email từ máy chủ thư điện tử về máy tính cá nhân của bạn. Khi sử dụng POP3, email sẽ được tải xuống và lưu trữ trên thiết bị của bạn, và thường sẽ bị xóa khỏi máy chủ sau khi tải xong (tuy nhiên, tùy vào cài đặt, email có thể vẫn giữ lại trên máy chủ). 
 #### Protocol Port
-![protocol port](https://exams.cpanel.net/getfile/TK_w0BHMRvieYBThQhuts-lAA.M012Yk14RmlyaENIaG55VVQxWGdXNUc1MFFETHNHMHF2eEZBd1pxdit0TjBQMzc4S3d4RVBRSTVoOXNHdllhdg/cpanel/1670441040_introduction-mail-server-overview-cmi5-_rcfho4w/scormcontent/assets/YzJk4s5rJOk16bTq__TJx14qbqq8sSqqh.png)
+![protocol port](https://images.articulate.com/f:jpg%7Cpng,a:retain,b:fff/rise/courses/rtdwELwWKP55ZIBfGnf-TTLkF_4QaeUy/_TJx14qbqq8sSqqh.png)
+## DNS Record
+### DKIM (send)
+DKIM là một phương thức giúp xác nhận Email thông qua chữ ký số giúp tránh email giả mạo.
+DKIM cho phép người nhận kiểm tra xem email được xác nhận từ một tên miền cụ thể có thực sự được chủ sở hữu uy quyền hay không? Nó sẽ gắn chữ ký điện tử, được liên kết với tên miền vào mỗi email gửi đi. Hệ thống người nhận có thể xác minh điều này bằng cách tra cứu mã khóa công khai (Public-key cryptography) của người gửi được xuất bản trong DNS.
+#### Cách hoạt động
+Ở bên gửi:
+* Bước 1: Tạo ra cặp khóa private/public, phần mềm OpenSSL có hỗ trợ.
+* Bước 2: Chuyển khóa Public lên khai báo bản ghi TXT trên DNS, ứng đúng với domain gửi email.
+* Bước 3: Cấu hình Mail server sử dụng khóa Private để ký vào email trước khi gửi email (Lưu ý: Khóa này chỉ lưu trên Mail server nên không thể giả mạo).
+
+Ở bên nhận:
+* Bước 1: Nhận email từ bên gửi và kiểm tra email có thông điệp được mã hóa do cấu hình DKIM.
+* Bước 2: Query DNS để lấy khóa Public của Domain bên gửi rồi giải mã, khi giải mã đúng thì xác nhận nguồn gửi và email đảm bảo, khi giải mã không thấy đúng thì phụ thuộc vào chính sách bên nhận để từ chối hoặc vẫn nhận email.
+### SPF (send)
+### PTR (send)
+### MX (receive)
 ## Dovecot
 Dovecot là mail server IMAP/POP3 được sử dụng trong cPanel & WHM. MUA bao gồm Microsoft Outlook, Mozilla Thunderbird, và Apple Mail.
 ### Primary Storage Option 
@@ -83,4 +99,4 @@ $ exim -bt <email address> : check routing info.
 * Từng folder trong mailboxes là user mailbox.
 * Thư được lưu trữ trong tệp có tên “m.1”. 
 ## Log file chứa ở đâu?
-![logfile path](https://exams.cpanel.net/getfile/TK_w0BHMRvieYBThQhuts-lAA.M012Yk14RmlyaENIaG55VVQxWGdXNUc1MFFETHNHMHF2eEZBd1pxdit0TjBQMzc4S3d4RVBRSTVoOXNHdllhdg/cpanel/1670441040_introduction-mail-server-overview-cmi5-_rcfho4w/scormcontent/assets/3nm7-PNLjbW04bII_3T1uw8p0pDtilh5d.png)
+![logfile path](https://images.articulate.com/f:jpg%7Cpng,a:retain,b:fff/rise/courses/rtdwELwWKP55ZIBfGnf-TTLkF_4QaeUy/3T1uw8p0pDtilh5d.png)
