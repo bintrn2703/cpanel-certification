@@ -112,6 +112,20 @@ Trong đó:
 | **clientTransferProhibited**| Trạng thái không cho phép transfer tên miền (Cấm chuyển đổi nhà đăng ký).           | Trạng thái này cho biết rằng không thể chuyển đổi nhà đăng ký tên miền, điều này sẽ giúp ngăn chặn việc chuyển đổi trái phép do chiếm quyền điều khiển và / hoặc lừa đảo. Nếu bạn muốn chuyển đổi tên miền của mình, bạn phải liên hệ với Nhà đăng ký và yêu cầu họ xóa bỏ trạng thái này.          |
 | **clientUpdateProhibited**  | Trạng thái không cho phép cập nhật thông tin tên miền (Cấm cập nhật thông tin)      | Trạng thái tên miền này cho biết rằng không thể cập nhật tên miền, điều này có thể giúp ngăn chặn các cập nhật trái phép do gian lận. Nếu bạn muốn cập nhật tên miền của mình, bạn phải liên hệ với Nhà đăng ký và yêu cầu họ xóa bỏ trạng thái này.    |
 
+### Web server
+#### Virtual host
+Virtual Hosts là một tính năng trong web server (Apache, NginX,...) cho phép nhiều trang web hoặc tên miền hoạt động trên cùng một máy chủ vật lý hoặc một địa chỉ IP duy nhất. Đây là giải pháp hữu ích giúp tối ưu hóa tài nguyên máy chủ, giảm chi phí vận hành và đơn giản hóa việc quản lý hosting cho nhiều website.
+![image](https://github.com/user-attachments/assets/0e6ac3dd-b371-43c9-9741-c8b17ea744fa)
+##### Xác định các thông tin của Virtual Host
+Mỗi Virtual Host sẽ chứa các thông tin như:
+* Tên miền: Để nhận diện và định tuyến đúng yêu cầu.
+* Thư mục gốc: Nơi lưu trữ tệp của trang web.
+* Địa chỉ IP (nếu cần): Áp dụng trong trường hợp sử dụng IP-Based Virtual Hosts.
+#### Phân biệt các loại Virtual Hosts
+* Name-Based Virtual Host: Cho phép nhiều tên miền sử dụng chung một địa chỉ IP.
+* IP-Based Virtual Host: Gán mỗi tên miền một địa chỉ IP riêng biệt.
+* Port-Based Virtual Host: Sử dụng số cổng (Port) để phân biệt các website trên cùng một địa chỉ IP.
+
 ### Protocol
 #### IP (Internet protocol) 
 * Là giao thức để các máy tính tìm thấy nhau trên mạng.
