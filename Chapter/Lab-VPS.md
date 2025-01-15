@@ -7,6 +7,16 @@ $ ssh root@<IP>
 ```
 4. Màn hình hiển thị "Welcome..." là login vô VPS thành công.
   ![image](https://github.com/user-attachments/assets/eb1382b9-3eb4-4ba5-823f-e0a29bbab622)
+5. Cài đặt cPanel lên server bằng cách mở terminal và nhập lệnh
+```
+cd /home && curl -o latest -L https://securedownloads.cpanel.net/latest && sh latest
+```
+6. Đăng nhập vào hệ thống bằng url được cung cấp sau quá trình cài đặt.
+7. Tiếp theo, đăng nhập vào cPanel Customer Portal để cấp quyền truy cập máy chủ. Nếu không có tài khoản ID cPanel thì tạo một cái. 
+   ![image](https://github.com/user-attachments/assets/e0322bfb-4532-441d-bb05-17e42d82faf6)
+8. Khi đã xác nhận email và xác minh tài khoản của mình, bạn sẽ sẵn sàng để kích hoạt bản dùng thử của bạn và tiến hành thiết lập máy chủ.
+9. Bây giờ WHM đã được cài đặt, có thể bắt đầu tạo và quản lý tài khoản cPanel trên máy chủ của mình.
+10. Nếu muốn triển khai web lên cPanel, cần trỏ domain về IP của VPS.
 # WordPress
 ## Setup website WordPress
 1. Từ giao diện cPanel » Home » Domains » WordPress Management. Click vào nút Install WordPress
@@ -30,6 +40,7 @@ Reverse Proxy là một hệ thống được đặt trước các nhóm Server,
 ![image](https://github.com/user-attachments/assets/2b1942a1-6eb2-46bc-9f3e-2594544d7846)
 
 Trong các giao tiếp Internet tiêu chuẩn, Client sẽ trực tiếp kết nối với Web Server, chúng gửi yêu cầu và chờ đợi kết quả phản hồi trực tiếp từ Web Server. Nhưng với hệ thống có Reverse Proxy, thì Reverse Proxy sẽ tiếp nhận yêu cầu từ Client, sau đó gửi yêu cầu này đến Web Server. Kết quả phản hồi từ Web Server được gửi trả về lại cho Reverse Proxy, sau đó mới được truyền đến Reverse Proxy.
+## LAMP stack
 ## Setup Reverse Proxy
 ### Cài đặt Nginx
 1. Sử dụng giao diện NGINX Manager của WHM: WHM » Home » Software » NGINX Manager.
@@ -51,6 +62,4 @@ Có thể điều chỉnh Directive thông qua giao diện WHM (WHM » Home » S
 * Để cấu hình đối với toàn bộ server block, tạo file .conf tại /etc/nginx/conf.d/users/username
 * Để cấu hình đối với server block của domain cụ thể, tạo file .conf tại /etc/nginx/conf.d/users/username/domainname/
 
-# LAMP stack
-# LEMP Stack
-# lamp/lemp stack multi vHosts
+
