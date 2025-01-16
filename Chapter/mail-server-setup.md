@@ -25,7 +25,7 @@ Exim sẽ xử lý việc gửi và nhận email.
    Chọn các tùy chọn sau trong quá trình cấu hình:
    - **General type of mail configuration**: Internet site; mail is sent and received directly using SMTP.
    - **System mail name**: `phattrn.site`.
-   - **IP addresses to listen on**: Giữ nguyên `127.0.0.1; ::1`.
+   - **IP addresses to listen on**: 127.0.0.1; 222.36.54.88
    - **Domains to relay mail for**: Để trống.
    - **Machines to relay mail for**: Để trống.
    - **Keep number of DNS-queries minimal**: No.
@@ -116,7 +116,7 @@ Roundcube cung cấp giao diện webmail để quản lý email.
    ```
 
 7. **Truy cập Roundcube**:
-   Mở trình duyệt và truy cập `http://yourdomain.com/roundcube`.
+   Mở trình duyệt và truy cập `http://phattrn.site/roundcube`.
 
 ## Bước 5: Cấu Hình Bản Ghi DNS
 Để đảm bảo email của bạn được gửi và nhận đúng cách, hãy cấu hình các bản ghi DNS sau cho tên miền của bạn:
@@ -125,7 +125,7 @@ Roundcube cung cấp giao diện webmail để quản lý email.
    ```plaintext
    Type: MX
    Host: @
-   Value: mail.yourdomain.com
+   Value: mail.phattrn.site
    Priority: 10
    ```
 
@@ -149,33 +149,91 @@ Roundcube cung cấp giao diện webmail để quản lý email.
      ```plaintext
      Type: TXT
      Host: _dmarc
-     Value: "v=DMARC1; p=none; rua=mailto:dmarc@yourdomain.com"
+     Value: "v=DMARC1; p=none; rua=mailto:dmarc@phattrn.site"
      ```
 
-## Bước 6: Kiểm Tra Máy Chủ Email
+## Bước 6: Cấu Hình DKIM Với OpenDKIM
+DKIM giúp xác minh email được gửi từ máy chủ hợp lệ và không bị giả mạo.
+
+1. **Cài đặt OpenDKIM**:
+   ```bash
+   sudo apt install opendkim opendkim-tools -y
+   ```
+
+2. **Cấu hình OpenDKIM**:
+   - Mở tệp cấu hình OpenDKIM:
+     ```bash
+     sudo nano /etc/opendkim.conf
+     ```
+     Thêm hoặc cập nhật các dòng sau:
+     ```plaintext
+     Syslog                  yes
+     UMask                   002
+     Domain                  phattrn.site
+     AutoRestart             Yes
+     Mode                    sv
+     SubDomains              no
+     Socket                  inet:8891@localhost
+     Selector                mail
+     KeyTable                /etc/opendkim/key.table
+     SigningTable            /etc/opendkim/signing.table
+     TrustedHosts            /etc/opendkim/trusted.hosts
+     ```
+
+3. **Tạo khóa DKIM**:
+   ```bash
+   sudo mkdir -p /etc/opendkim/keys
+   cd /etc/opendkim/keys
+   sudo opendkim-genkey -s mail -d phattrn.site
+   sudo chown opendkim:opendkim mail.private
+   ```
+
+4. **Cập nhật KeyTable và SigningTable**:
+   - Mở `/etc/opendkim/key.table` và thêm dòng:
+     ```plaintext
+     mail._domainkey.phattrn.site phattrn.site:mail:/etc/opendkim/keys/mail.private
+     ```
+   - Mở `/etc/opendkim/signing.table` và thêm dòng:
+     ```plaintext
+     *@phattrn.site mail._domainkey.phattrn.site
+     ```
+   - Mở `/etc/opendkim/trusted.hosts` và thêm:
+     ```plaintext
+     127.0.0.1
+     ::1
+     phattrn.site
+     ```
+
+5. **Tích hợp OpenDKIM với Exim**:
+   - Mở tệp `/etc/exim4/exim4.conf.template` hoặc tệp cấu hình chính của Exim.
+   - Tìm dòng `remote_smtp:` và thêm:
+     ```plaintext
+     remote_smtp:
+       driver = smtp
+       dkim_domain = ${lc:${domain:$h_from:}}
+       dkim_selector = mail
+       dkim_private_key = /etc/opendkim/keys/mail.private
+       dkim_canon = relaxed
+       dkim_strict = false
+     ```
+
+6. **Thêm Bản Ghi DKIM Vào DNS**:
+   - Mở tệp `mail.txt` trong `/etc/opendkim/keys/` và sao chép giá trị bắt đầu từ `v=DKIM1;`.
+   - Thêm bản ghi TXT vào DNS:
+     ```plaintext
+     Type: TXT
+     Host: mail._domainkey
+     Value: [Giá trị từ tệp mail.txt]
+     ```
+
+7. **Khởi động lại dịch vụ**:
+   ```bash
+   sudo systemctl restart opendkim
+   sudo systemctl restart exim4
+   ```
+
+## Bước 7: Kiểm Tra Máy Chủ Email
 1. Sử dụng một ứng dụng email như Thunderbird hoặc Outlook để thử gửi và nhận email.
-2. Sử dụng các công cụ như [Mail Tester](https://www.mail-tester.com/) để kiểm tra cấu hình DNS và máy chủ.
-
+2. Sử dụng các công cụ như [Mail Tester](https://www.mail-tester.com/) để kiểm tra cấu hình DNS, SPF, DKIM và DMARC.
 ---
-
-## Tuỳ Chọn: Bảo Mật Máy Chủ Email Với SSL/TLS
-Sử dụng Let's Encrypt để bảo mật máy chủ email với SSL/TLS:
-
-1. **Cài đặt Certbot**:
-   ```bash
-   sudo apt install certbot -y
-   ```
-
-2. **Lấy Chứng Chỉ SSL**:
-   ```bash
-   sudo certbot certonly --standalone -d mail.yourdomain.com
-   ```
-
-3. **Cấu hình SSL cho Exim và Dovecot**:
-   Cập nhật các tệp cấu hình của chúng để sử dụng chứng chỉ và khóa được tạo.
-
-4. **Khởi động lại Dịch Vụ**:
-   ```bash
-   sudo systemctl restart exim4 dovecot
-   ```
 
