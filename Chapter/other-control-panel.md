@@ -1,3 +1,22 @@
+# Cài đặt các loại Control Panel khác nhau
+## cPanel
+1. Mở terminal, kết nối VPS bằng lệnh:
+```
+$ ssh root@<IP>
+```
+2. Màn hình hiển thị "Welcome..." là login vô VPS thành công.
+  ![image](https://github.com/user-attachments/assets/eb1382b9-3eb4-4ba5-823f-e0a29bbab622)
+3. Cài đặt cPanel lên server bằng cách mở terminal và nhập lệnh
+```
+cd /home && curl -o latest -L https://securedownloads.cpanel.net/latest && sh latest
+```
+4. Đăng nhập vào hệ thống bằng url được cung cấp sau quá trình cài đặt.
+5. Tiếp theo, đăng nhập vào cPanel Customer Portal để cấp quyền truy cập máy chủ. Nếu không có tài khoản ID cPanel thì tạo một cái. 
+   ![image](https://github.com/user-attachments/assets/e0322bfb-4532-441d-bb05-17e42d82faf6)
+6. Khi đã xác nhận email và xác minh tài khoản của mình, bạn sẽ sẵn sàng để kích hoạt bản dùng thử của bạn và tiến hành thiết lập máy chủ.
+7. Bây giờ WHM đã được cài đặt, có thể bắt đầu tạo và quản lý tài khoản cPanel trên máy chủ của mình.
+8. Nếu muốn triển khai web lên cPanel, cần trỏ domain về IP của VPS bằng record A.
+    ![image](https://github.com/user-attachments/assets/3c35cd6c-c412-41c0-a3d3-e54162ac985c)
 # So sánh các loại Control Panel khác nhau
 | STT | Tiêu Chí              | DirectAdmin         | aaPanel            | CyberPanel         | VestaCP                  |
 |-----|------------------------|---------------------|--------------------|--------------------|--------------------------|
