@@ -25,7 +25,7 @@ Exim sẽ xử lý việc gửi và nhận email.
    Chọn các tùy chọn sau trong quá trình cấu hình:
    - **General type of mail configuration**: Internet site; mail is sent and received directly using SMTP.
    - **System mail name**: `phattrn.site`.
-   - **IP addresses to listen on**: 127.0.0.1; 222.36.54.88
+   - **IP addresses to listen on**: 127.0.0.1; <VPS IP>
    - **Domains to relay mail for**: Để trống.
    - **Machines to relay mail for**: Để trống.
    - **Keep number of DNS-queries minimal**: No.
