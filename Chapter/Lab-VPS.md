@@ -50,7 +50,7 @@ cd /home && curl -o latest -L https://securedownloads.cpanel.net/latest && sh la
 5. **Trên host đích:** Sau khi cài xong thì Active nó lên. ![image](https://github.com/user-attachments/assets/0d07623a-1d2b-40c3-9860-ec7694944b72)
 6. **Trên host đích:** Sau khi Active thành công thì chọn Import From > File và upload File vừa export ra được từ server source. ![image](https://github.com/user-attachments/assets/d3c441e3-6617-49da-8bcb-0676cdc456b4)
 
-# Setup Mail Server thủ công mà không sử dụng terminal
+# Setup Mail Server thủ công mà không sử dụng control panel
 
 Thiết lập mail server với **Exim** làm MTA (Mail Transfer Agent), **Dovecot** để xử lý POP/IMAP, và **Roundcube** là giao diện webmail.
 
@@ -60,8 +60,6 @@ Cập nhật và nâng cấp hệ thống để đảm bảo tất cả các gó
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
-
----
 
 ## Bước 2: Cài Đặt Exim
 Exim sẽ xử lý việc gửi và nhận email.
@@ -90,8 +88,6 @@ Exim sẽ xử lý việc gửi và nhận email.
    ```bash
    sudo systemctl restart exim4
    ```
-
----
 
 ## Bước 3: Cài Đặt Và Cấu Hình Dovecot
 Dovecot sẽ xử lý các giao thức IMAP và POP3 để truy xuất email.
@@ -123,8 +119,6 @@ Dovecot sẽ xử lý các giao thức IMAP và POP3 để truy xuất email.
    ```bash
    sudo systemctl restart dovecot
    ```
-
----
 
 ## Bước 4: Cài Đặt Roundcube
 Roundcube cung cấp giao diện webmail để quản lý email.
@@ -176,8 +170,6 @@ Roundcube cung cấp giao diện webmail để quản lý email.
 7. **Truy cập Roundcube**:
    Mở trình duyệt và truy cập `http://yourdomain.com/roundcube`.
 
----
-
 ## Bước 5: Cấu Hình Bản Ghi DNS
 Để đảm bảo email của bạn được gửi và nhận đúng cách, hãy cấu hình các bản ghi DNS sau cho tên miền của bạn:
 
@@ -212,8 +204,6 @@ Roundcube cung cấp giao diện webmail để quản lý email.
      Value: "v=DMARC1; p=none; rua=mailto:dmarc@yourdomain.com"
      ```
 
----
-
 ## Bước 6: Kiểm Tra Máy Chủ Email
 1. Sử dụng một ứng dụng email như Thunderbird hoặc Outlook để thử gửi và nhận email.
 2. Sử dụng các công cụ như [Mail Tester](https://www.mail-tester.com/) để kiểm tra cấu hình DNS và máy chủ.
@@ -240,10 +230,6 @@ Sử dụng Let's Encrypt để bảo mật máy chủ email với SSL/TLS:
    ```bash
    sudo systemctl restart exim4 dovecot
    ```
-
----
-
-Máy chủ email của bạn đã sẵn sàng! Để có thêm các tính năng nâng cao hoặc hỗ trợ xử lý lỗi, tham khảo tài liệu chính thức của Exim, Dovecot và Roundcube.
 
 
 # Reverse Proxy
