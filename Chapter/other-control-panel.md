@@ -39,7 +39,7 @@ cd /home && curl -o latest -L https://securedownloads.cpanel.net/latest && sh la
 5. Tiếp theo, đăng nhập vào cPanel Customer Portal để cấp quyền truy cập máy chủ. Nếu không có tài khoản ID cPanel thì tạo một cái. 
    ![image](https://github.com/user-attachments/assets/e0322bfb-4532-441d-bb05-17e42d82faf6)
 6. Khi đã xác nhận email và xác minh tài khoản của mình, bạn sẽ sẵn sàng để kích hoạt bản dùng thử của bạn và tiến hành thiết lập máy chủ.
-7. Bây giờ WHM đã được cài đặt, có thể bắt đầu tạo và quản lý tài khoản cPanel trên máy chủ của mình.
+7. Bây giờ WHM đã được cài đặt, có thể bắt đầu tạo và quản lý tài khoản cPanel trên máy chủ của mình. ![image](https://github.com/user-attachments/assets/9027ed2b-aaa1-4f7c-84e8-e570ef96d790)
 8. Nếu muốn triển khai web lên cPanel, cần trỏ domain về IP của VPS bằng record A.
     ![image](https://github.com/user-attachments/assets/3c35cd6c-c412-41c0-a3d3-e54162ac985c)
 ## aaPanel
