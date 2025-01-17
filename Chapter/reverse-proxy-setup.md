@@ -6,6 +6,7 @@ Reverse Proxy là một hệ thống được đặt trước các nhóm Server,
 Trong các giao tiếp Internet tiêu chuẩn, Client sẽ trực tiếp kết nối với Web Server, chúng gửi yêu cầu và chờ đợi kết quả phản hồi trực tiếp từ Web Server. Nhưng với hệ thống có Reverse Proxy, thì Reverse Proxy sẽ tiếp nhận yêu cầu từ Client, sau đó gửi yêu cầu này đến Web Server. Kết quả phản hồi từ Web Server được gửi trả về lại cho Reverse Proxy, sau đó mới được truyền đến Reverse Proxy.
 ## LAMP stack
 ## Setup Reverse Proxy
+Để setup reverse proxy, trước tiên ta cần 2 VPS: 1 VPS chạy Nginx cho reverse proxy, 1 VPS chạy LAMP để làm web server. Mục tiêu của là sẽ sử dụng Reverse Proxy để ẩn đi IP của web server giúp bảo mật, tránh cho web server trước các cuộc tấn công DDOS.
 ### Cài đặt Nginx
 1. Sử dụng giao diện NGINX Manager của WHM: WHM » Home » Software » NGINX Manager.
 2. Vô lại trang web đang host trên hosting, bấm "F12" trên bàn phím, vô tab Network, chọn web của mình, ở phần Respond Header nếu để server: nginx là đã thiết lập thành công.
