@@ -62,6 +62,10 @@ release the following port (26886|888|80|443|20|21) in the security group
 =============================================================================
 ```
 3. Sao chép URL đăng nhập aaPanel vào thanh địa chỉ trình duyệt, điền vào tài khoản và mật khẩu. ![image](https://github.com/user-attachments/assets/d197b7a7-7f67-4bd4-9f69-a1767bdd818e)
-4. Bây giờ aaPanel đã được cài đặt thành công, có thể bắt đầu tạo và quản lý trang web trên máy chủ.
+4. Chọn cài đặt mô hình LNMP/LAMP sau khi cài đặt.
+5. Bây giờ aaPanel đã được cài đặt thành công, có thể bắt đầu tạo và quản lý trang web trên máy chủ. ![image](https://github.com/user-attachments/assets/33c57e58-8b42-4600-bd38-f09fd6740f74)
 
-
+## DirectAdmin
+Do DirectAdmin tốn phí nên sử dụng DirectAdmin cung cấp sẵn trong OS image của Vietnix
+1. Vô trang quản lí VPS, chọn Reinstall. ![image](https://github.com/user-attachments/assets/879ad830-24d8-4f82-b5e6-c3a5452d662f)
+2. Chọn OS image có chữ "DirectAdmin" và bấm Reinstall. ![image](https://github.com/user-attachments/assets/1c230dc7-f574-465a-a918-ff672cbdfa5b)
