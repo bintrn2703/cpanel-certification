@@ -44,6 +44,8 @@
 18. Cài đặt SSMS thành công, chọn Close.<br>![image](https://github.com/user-attachments/assets/6848afba-a0ba-48d0-bc71-40e3fb8a0631)
 19. Truy cập vào SSMS từ Start Menu. <br> ![image](https://github.com/user-attachments/assets/d530992a-f6c3-4948-993a-191661ac34d6)
 20. Để mặc định và Connect.<br> ![image](https://github.com/user-attachments/assets/693e383d-34f8-4c43-917c-9368526c25aa)
+21. Đã kết nối thành công vào Database. <br> ![image](https://github.com/user-attachments/assets/32f1adf7-7639-4e78-9704-1081f6dc1995)
+
 
 
   
