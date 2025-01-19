@@ -43,7 +43,8 @@
 17. Quá trình cài SSMS được diễn ra. <br> ![image](https://github.com/user-attachments/assets/c4007e15-1eac-4e14-b596-196121f9005c)
 18. Cài đặt SSMS thành công, chọn Close.<br>![image](https://github.com/user-attachments/assets/6848afba-a0ba-48d0-bc71-40e3fb8a0631)
 19. Truy cập vào SSMS từ Start Menu. <br> ![image](https://github.com/user-attachments/assets/d530992a-f6c3-4948-993a-191661ac34d6)
-20. 
+20. Đối server name về tên server được tạo ở bước 9.<br> ![image](https://github.com/user-attachments/assets/693e383d-34f8-4c43-917c-9368526c25aa)
+
 
   
 
