@@ -36,7 +36,8 @@
 10. Để mặc định và Next. <br> ![image](https://github.com/user-attachments/assets/ca3dfc62-cebe-424c-b8d9-97a1a3cb500b)
 11. Chọn Add Current User để thêm account Admin, sau đó chọn Next. <br> ![image](https://github.com/user-attachments/assets/6e3bf464-3835-472e-9a2d-c7fa75216b98)
 12. Review lại và ấn Install. <br> ![image](https://github.com/user-attachments/assets/b5338e7f-2dfb-49ab-8ed2-d1b822c20966)
-13. Quá trình cài đặt bắt đầu diễn ra. <br> ![image](https://github.com/user-attachments/assets/f603f1c1-b90e-416f-ac17-b3e7d99d326c)
+13. Quá trình cài đặt bắt đầu diễn ra. <br> ![image](https://github.com/user-attachments/assets/fe469cd2-6d6c-4778-a595-b99dca618cd2)
+
 
 
 
