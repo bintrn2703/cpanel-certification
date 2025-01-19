@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/840206c6-8d5e-4fec-b318-89b3c832a32e)# Windows Server
+# Windows Server
 ## Allow/Block/Limit port/IP bằng Windows Firewall
 1. Đăng nhập vào VPS, từ Start menu > tìm và mở Windows Defender Firewall with Advanced Settings. ![image](https://github.com/user-attachments/assets/47cff32e-025f-4478-a5a8-76fbb341388f)
 2. Để áp dụng firewall rule theo hướng từ ngoài Internet vào máy, chọn Inbound > New Rule. ![image](https://github.com/user-attachments/assets/97e09c1b-b4a4-42ab-bf3c-c7710874c265)
