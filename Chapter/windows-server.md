@@ -37,6 +37,19 @@
 11. Chọn Add Current User để thêm account Admin, sau đó chọn Next. <br> ![image](https://github.com/user-attachments/assets/6e3bf464-3835-472e-9a2d-c7fa75216b98)
 12. Review lại và ấn Install. <br> ![image](https://github.com/user-attachments/assets/b5338e7f-2dfb-49ab-8ed2-d1b822c20966)
 13. Quá trình cài đặt bắt đầu diễn ra. <br> ![image](https://github.com/user-attachments/assets/fe469cd2-6d6c-4778-a595-b99dca618cd2)
+14. Sau khi cài đặt xong, chọn Close. ![image](https://github.com/user-attachments/assets/4ac874a9-226e-40fe-85b1-51b413720f70)
+15. Sau khi cài xong SQL Server, để có thể truy cập và quản lí Database, nên cài thêm SSMS. <br> ![image](https://github.com/user-attachments/assets/3bb96cf7-8867-4d00-9d0e-2838315e4d2e)
+16. Chọn Install. <br> ![image](https://github.com/user-attachments/assets/1ee2fc30-7b30-49cd-a71f-bfa35267662b)
+17. Quá trình cài SSMS được diễn ra. <br> ![image](https://github.com/user-attachments/assets/c4007e15-1eac-4e14-b596-196121f9005c)
+18. Cài đặt SSMS thành công, chọn Close.<br>![image](https://github.com/user-attachments/assets/6848afba-a0ba-48d0-bc71-40e3fb8a0631)
+19. Truy cập vào SSMS từ Start Menu. <br> ![image](https://github.com/user-attachments/assets/d530992a-f6c3-4948-993a-191661ac34d6)
+20. 
+
+  
+
+
+
+
 
 
 
