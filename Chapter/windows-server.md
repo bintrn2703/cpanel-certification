@@ -21,7 +21,7 @@
 8. Sau khi Install hoàn tất, vào Start Menu tìm IIS Manager. ![image](https://github.com/user-attachments/assets/4596c73f-9a7e-4323-9a1b-29d6c8a74bc4)
 9. IIS Manager đã được cài đặt thành công. <br> ![image](https://github.com/user-attachments/assets/9bff8622-dde4-4e42-929a-9ab684697348)
 10. Dùng trình duyệt truy cập vào IP của VPS, nếu hiển thị màn hình chào mừng Windows Server như vầy là đã thành công. ![image](https://github.com/user-attachments/assets/8fcda3f0-3c5a-4b7c-bfb2-57d6ab977d2f)
-## Cài đặt và triển khai website WordPress
+
 ## Cài đặt SQL Server
 1. Đăng nhập vào bằng tải khoản Administrator, tải file .iso của SQL Server về, chuột phải vào file iso chọn Mount để gắn file .iso vào máy. <br> ![image](https://github.com/user-attachments/assets/f8496c37-e842-4c3a-8683-fc29e2baeb1f)
 2. Vào ổ đĩa vừa được Mount từ file .iso, click chuột phải vào Setup.exe > Run as Administrator. <br> ![image](https://github.com/user-attachments/assets/57f0e1d7-3188-4c70-8ee1-38eafa2dae71)
@@ -46,23 +46,7 @@
 20. Để mặc định và Connect.<br> ![image](https://github.com/user-attachments/assets/693e383d-34f8-4c43-917c-9368526c25aa)
 21. Đã kết nối thành công vào Database. <br> ![image](https://github.com/user-attachments/assets/32f1adf7-7639-4e78-9704-1081f6dc1995)
 
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
