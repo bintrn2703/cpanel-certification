@@ -23,3 +23,29 @@
 10. Dùng trình duyệt truy cập vào IP của VPS, nếu hiển thị màn hình chào mừng Windows Server như vầy là đã thành công. ![image](https://github.com/user-attachments/assets/8fcda3f0-3c5a-4b7c-bfb2-57d6ab977d2f)
 ## Cài đặt và triển khai website WordPress
 ## Cài đặt SQL Server
+1. Đăng nhập vào bằng tải khoản Administrator, tải file .iso của SQL Server về, chuột phải vào file iso chọn Mount để gắn file .iso vào máy. <br> ![image](https://github.com/user-attachments/assets/f8496c37-e842-4c3a-8683-fc29e2baeb1f)
+2. Vào ổ đĩa vừa được Mount từ file .iso, click chuột phải vào Setup.exe > Run as Administrator. <br> ![image](https://github.com/user-attachments/assets/57f0e1d7-3188-4c70-8ee1-38eafa2dae71)
+3. Chọn New SQL Server standalone installation ... <br> ![image](https://github.com/user-attachments/assets/fb7e864c-8bca-45c9-9302-e8c7ea10bb73)
+4. Nhập Key và ấn Next. <br> ![image](https://github.com/user-attachments/assets/cd58251e-230e-449c-b5f5-bf47dd60f66a)
+5. Chọn ô I accept the ... <br> ![image](https://github.com/user-attachments/assets/bbc359d4-0cc7-494e-ad2b-abbb1cb45af8)
+6. Next > Next > Next.
+7. Để trống và Next. <br> ![image](https://github.com/user-attachments/assets/a4e53b91-e741-42a1-b3fe-da527ea4b29a)
+8. Chọn Database Engine Service và Next. <br> ![image](https://github.com/user-attachments/assets/6491d24f-e818-4a3c-846b-570ef03ffa49)
+
+9. Để mặc định và Next. <br> ![image](https://github.com/user-attachments/assets/eaf799e0-030f-4b6e-8076-42d60759cab4)
+10. Để mặc định và Next. <br> ![image](https://github.com/user-attachments/assets/ca3dfc62-cebe-424c-b8d9-97a1a3cb500b)
+11. Chọn Add Current User để thêm account Admin, sau đó chọn Next. <br> ![image](https://github.com/user-attachments/assets/6e3bf464-3835-472e-9a2d-c7fa75216b98)
+12. Review lại và ấn Install. <br> ![image](https://github.com/user-attachments/assets/b5338e7f-2dfb-49ab-8ed2-d1b822c20966)
+13. Quá trình cài đặt bắt đầu diễn ra. <br> ![image](https://github.com/user-attachments/assets/f603f1c1-b90e-416f-ac17-b3e7d99d326c)
+
+
+
+
+
+
+
+
+
+
+
+
